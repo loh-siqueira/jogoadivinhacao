@@ -4,7 +4,7 @@ print('Bem vindo, ao JOGO DE ADIVINHAÇÃO')
 print('*********************************')
 
 #Definindo o número secreto
-numeroSecreto = round(random.random()*100)
+numeroSecreto = random.randrange(1,10)
 #print(numeroSecreto)
 
 #Definindo o número de tentativas
@@ -31,3 +31,8 @@ while( rodada <= numeroTentativas):
  #numeroTentativas = numeroTentativas-1
 #Aula Elif 26.02.24
     rodada = rodada + 1
+
+    print('qual o nivel de dificuldade?')
+    print("(1)-fácil, (2)-médio, (3)-dificil")
+     
+     nivel = int(input("defina o nivel:" ))
