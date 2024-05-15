@@ -1,38 +1,58 @@
-import random;
+import random
+
 print('*********************************')
 print('Bem vindo, ao JOGO DE ADIVINHAÇÃO')
 print('*********************************')
 
-#Definindo o número secreto
-numeroSecreto = random.randrange(1,10)
+#definindo o  numero secreto
+numeroSecreto = random.randrange(1,101)
 #print(numeroSecreto)
 
-#Definindo o número de tentativas
-numeroTentativas = 10
 
+#Definindo o numero de tentativas
+numerotentativas = 0
 rodada=1
+pontos = 1000
 
-while( rodada <= numeroTentativas):
-    print('tentativas',rodada, 'de', numeroTentativas)
+print(" Qual o nível de dificuldade?")
+print("(1)-Facíl,(2)-médio,(3)-difícil")
+
+nivel = int(input("Defina o nível:"))
+
+#vamos mudar o numero de tentativas conforme a dificuldade
+if(nivel == 1){
+      numerotentativas=18;
+} elif(nivel==2);{
+     numerotentativas=8;
+}else{
+ numerotentativas=5;
+}
+while(rodada<= numerotentativas):
+    print('tentativa',rodada, 'de',numerotentativas)
+
 
 #Recebendo o chute do jogador
-    chuteString = input('Digite um número entre 1 e 100: ')
-    chute = int(chuteString)
+    chuteString = input('Digite um número: ')
 
-#Declarando as condiçõeseString = input('Digite um número: ')
-   
+
+    chute = int (chuteString)
+
+#Declarando as condições
     if (numeroSecreto == chute):
         print('Você acertou!')
         break
     elif(chute>numeroSecreto):
-        print('Você errou!! O número secreto é um número menor')
+        print('Voce errou!! O número secreto é numero menor')
     else:
-        print('Você errou!! O número secreto é um número maior')
- #numeroTentativas = numeroTentativas-1
-#Aula Elif 26.02.24
+        print('Você errou!! O numero secreto é um número maior')
+    pontos_perdidos = abs(numeroSecreto - chute);
+    pontos = pontos - pontos_perdidos
+
+    #numerotentativas = numerotentativas - 1
     rodada = rodada + 1
 
-    print('qual o nivel de dificuldade?')
-    print("(1)-fácil, (2)-médio, (3)-dificil")
-     
-     nivel = int(input("defina o nivel:" ))
+
+
+
+
+
